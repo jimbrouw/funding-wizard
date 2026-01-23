@@ -1,0 +1,1104 @@
+{
+    "routeId": "ace_project_grants",
+    "title": "ACE Project Grants (≤ £30k)",
+    "steps": [
+        {
+            "id": "elig",
+            "title": "Eligibility",
+            "intro": "Start gate: Basic eligibility and project name."
+        },
+        {
+            "id": "essential",
+            "title": "Essential Info",
+            "intro": "Summary, description, and beneficiaries."
+        },
+        {
+            "id": "feasibility",
+            "title": "Feasibility & Risk",
+            "intro": "Dates, plan, budget, and risks."
+        },
+        {
+            "id": "outcomes",
+            "title": "Outcomes",
+            "intro": "How your project contributes to ACE outcomes."
+        },
+        {
+            "id": "principles",
+            "title": "Invesment Principles",
+            "intro": "Creative Case for Diversity and other principles."
+        },
+        {
+            "id": "submit",
+            "title": "Attachments",
+            "intro": "Final checklist and supporting material."
+        }
+    ],
+    "questions": {
+        "elig": [
+            {
+                "id": "elig_project_name",
+                "type": "text_short",
+                "label": "Project name",
+                "required": true
+            },
+            {
+                "id": "elig_amount_requested",
+                "type": "currency_gbp",
+                "label": "Total amount requested (incl. personal access costs)",
+                "required": true,
+                "help": "ACE National Lottery Project Grants (≤ £30k) route."
+            },
+            {
+                "id": "elig_personal_access_costs",
+                "type": "currency_gbp",
+                "label": "Personal access costs amount",
+                "help": "Costs for yourself or your collaborators to access the project."
+            }
+        ],
+        "essential": [
+            {
+                "id": "q_one_sentence",
+                "type": "text_short",
+                "label": "What is the project in one sentence?",
+                "required": true,
+                "outputSlots": [
+                    "project_summary_300"
+                ]
+            },
+            {
+                "id": "q_target_audience",
+                "type": "text_short",
+                "label": "Who is it for?",
+                "required": true,
+                "outputSlots": [
+                    "project_summary_300"
+                ]
+            },
+            {
+                "id": "q_format",
+                "type": "choice",
+                "label": "Where/Format",
+                "choices": [
+                    {
+                        "value": "live",
+                        "label": "Live"
+                    },
+                    {
+                        "value": "digital",
+                        "label": "Digital"
+                    },
+                    {
+                        "value": "both",
+                        "label": "Both"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "project_summary_300"
+                ]
+            },
+            {
+                "id": "q_rough_dates",
+                "type": "text_short",
+                "label": "Rough dates window",
+                "help": "e.g., Summer 2026",
+                "required": true,
+                "outputSlots": [
+                    "project_summary_300"
+                ]
+            },
+            {
+                "id": "q_activities_list",
+                "type": "text_long",
+                "label": "Activities list (3-6 bullets)",
+                "required": true,
+                "outputSlots": [
+                    "project_description_800"
+                ]
+            },
+            {
+                "id": "q_collaborators",
+                "type": "text_long",
+                "label": "Collaborators (named if confirmed)",
+                "outputSlots": [
+                    "project_description_800"
+                ]
+            },
+            {
+                "id": "q_delivery_format_loc",
+                "type": "text_long",
+                "label": "Delivery format and locations",
+                "outputSlots": [
+                    "project_description_800"
+                ]
+            },
+            {
+                "id": "beneficiaries_table",
+                "type": "table",
+                "label": "Who benefits (numbers)",
+                "columns": [
+                    {
+                        "id": "type",
+                        "label": "Type",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "creative_participants",
+                                "label": "Creative participants"
+                            },
+                            {
+                                "value": "active_participants",
+                                "label": "Active participants"
+                            },
+                            {
+                                "value": "volunteers",
+                                "label": "Volunteers"
+                            },
+                            {
+                                "value": "live_audience",
+                                "label": "Live audiences/visitors"
+                            },
+                            {
+                                "value": "streaming_audience",
+                                "label": "Streaming audiences"
+                            },
+                            {
+                                "value": "digital_audience",
+                                "label": "Digital audiences"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "count",
+                        "label": "Expected count",
+                        "type": "number"
+                    }
+                ],
+                "outputSlots": [
+                    "beneficiaries_table"
+                ]
+            },
+            {
+                "id": "beneficiary_calc_800",
+                "type": "text_long",
+                "label": "How have you worked out these figures?",
+                "help": "e.g., venue capacity x performances",
+                "required": true,
+                "outputSlots": [
+                    "beneficiary_calc_800"
+                ]
+            },
+            {
+                "id": "experience_modes",
+                "type": "multi_choice",
+                "label": "How people experience the project",
+                "choices": [
+                    {
+                        "value": "live_static",
+                        "label": "Live static"
+                    },
+                    {
+                        "value": "touring",
+                        "label": "Touring"
+                    },
+                    {
+                        "value": "streaming",
+                        "label": "Streaming/broadcast"
+                    },
+                    {
+                        "value": "digital",
+                        "label": "Digital (e.g., app, VR)"
+                    },
+                    {
+                        "value": "longer_term",
+                        "label": "Longer-term engagement"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "experience_modes"
+                ]
+            },
+            {
+                "id": "longer_term_benefit_800",
+                "type": "text_long",
+                "label": "Tell us more about the longer-term engagement",
+                "condition": {
+                    "questionId": "experience_modes",
+                    "includes": "longer_term"
+                },
+                "outputSlots": [
+                    "longer_term_benefit_800"
+                ]
+            },
+            {
+                "id": "activity_locations_table",
+                "type": "table",
+                "label": "Locations & activity instances",
+                "columns": [
+                    {
+                        "id": "type",
+                        "label": "Activity type",
+                        "type": "text"
+                    },
+                    {
+                        "id": "venue",
+                        "label": "Venue/Address",
+                        "type": "text"
+                    },
+                    {
+                        "id": "dates",
+                        "label": "Dates",
+                        "type": "text"
+                    },
+                    {
+                        "id": "sessions",
+                        "label": "Performances/Days",
+                        "type": "number"
+                    },
+                    {
+                        "id": "status",
+                        "label": "Booking status",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "expected",
+                                "label": "Expected"
+                            },
+                            {
+                                "value": "confirmed",
+                                "label": "Confirmed"
+                            }
+                        ]
+                    }
+                ],
+                "outputSlots": [
+                    "activity_locations_table"
+                ]
+            }
+        ],
+        "feasibility": [
+            {
+                "id": "project_start_date",
+                "type": "date",
+                "label": "Project start date",
+                "required": true,
+                "help": "Must be at least 8 weeks after submission.",
+                "outputSlots": [
+                    "project_start_date"
+                ]
+            },
+            {
+                "id": "project_end_date",
+                "type": "date",
+                "label": "Project end date",
+                "required": true,
+                "outputSlots": [
+                    "project_end_date"
+                ]
+            },
+            {
+                "id": "project_plan_table",
+                "type": "table",
+                "label": "Project plan",
+                "columns": [
+                    {
+                        "id": "stage",
+                        "label": "Stage/Task",
+                        "type": "text"
+                    },
+                    {
+                        "id": "start",
+                        "label": "Start Date",
+                        "type": "date"
+                    },
+                    {
+                        "id": "end",
+                        "label": "End Date",
+                        "type": "date"
+                    },
+                    {
+                        "id": "details",
+                        "label": "Details",
+                        "type": "text"
+                    },
+                    {
+                        "id": "lead",
+                        "label": "Lead Person",
+                        "type": "text"
+                    }
+                ],
+                "outputSlots": [
+                    "project_plan_table"
+                ]
+            },
+            {
+                "id": "budget_income_table",
+                "type": "table",
+                "label": "Income",
+                "columns": [
+                    {
+                        "id": "heading",
+                        "label": "Heading",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "earned",
+                                "label": "Earned income"
+                            },
+                            {
+                                "value": "local_auth",
+                                "label": "Local authority"
+                            },
+                            {
+                                "value": "public",
+                                "label": "Other public funding"
+                            },
+                            {
+                                "value": "private",
+                                "label": "Private income"
+                            },
+                            {
+                                "value": "support_in_kind",
+                                "label": "Support in kind"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "status",
+                        "label": "Status",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "expected",
+                                "label": "Expected"
+                            },
+                            {
+                                "value": "confirmed",
+                                "label": "Confirmed"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "amount",
+                        "label": "Amount",
+                        "type": "currency"
+                    },
+                    {
+                        "id": "conf_date",
+                        "label": "Confirmation date (if expected)",
+                        "type": "date"
+                    }
+                ],
+                "outputSlots": [
+                    "budget_income_table"
+                ]
+            },
+            {
+                "id": "match_funding_1500",
+                "type": "text_long",
+                "label": "Tell us more about the match funding",
+                "help": "10% expectation. Realism? Downside plan?",
+                "required": true,
+                "outputSlots": [
+                    "match_funding_1500"
+                ]
+            },
+            {
+                "id": "budget_expenditure_table",
+                "type": "table",
+                "label": "Expenditure",
+                "columns": [
+                    {
+                        "id": "heading",
+                        "label": "Heading",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "artistic",
+                                "label": "Artistic spending"
+                            },
+                            {
+                                "value": "access",
+                                "label": "Access"
+                            },
+                            {
+                                "value": "org_dev",
+                                "label": "Organisational development"
+                            },
+                            {
+                                "value": "marketing",
+                                "label": "Marketing/audience"
+                            },
+                            {
+                                "value": "overheads",
+                                "label": "Overheads"
+                            },
+                            {
+                                "value": "assets",
+                                "label": "Assets"
+                            },
+                            {
+                                "value": "env",
+                                "label": "Environmental responsibility"
+                            },
+                            {
+                                "value": "other",
+                                "label": "Other"
+                            },
+                            {
+                                "value": "personal_access",
+                                "label": "Personal access costs"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "description",
+                        "label": "Description",
+                        "type": "text"
+                    },
+                    {
+                        "id": "amount",
+                        "label": "Amount",
+                        "type": "currency"
+                    }
+                ],
+                "outputSlots": [
+                    "budget_expenditure_table"
+                ]
+            },
+            {
+                "id": "budget_experience_choice",
+                "type": "choice",
+                "label": "Have you managed a project budget of this size before?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "budget_experience_choice"
+                ]
+            },
+            {
+                "id": "budget_experience_support_1500",
+                "type": "text_long",
+                "label": "What support will you have to manage the budget?",
+                "condition": {
+                    "questionId": "budget_experience_choice",
+                    "equals": "no"
+                },
+                "outputSlots": [
+                    "budget_experience_support_1500"
+                ]
+            },
+            {
+                "id": "partners_table",
+                "type": "table",
+                "label": "Partners and collaborators",
+                "columns": [
+                    {
+                        "id": "name",
+                        "label": "Name",
+                        "type": "text"
+                    },
+                    {
+                        "id": "role",
+                        "label": "Role",
+                        "type": "text"
+                    },
+                    {
+                        "id": "status",
+                        "label": "Confirmed?",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "confirmed",
+                                "label": "Confirmed"
+                            },
+                            {
+                                "value": "expected",
+                                "label": "Expected"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "what",
+                        "label": "What they'll do",
+                        "type": "text"
+                    }
+                ],
+                "outputSlots": [
+                    "partners_table"
+                ]
+            },
+            {
+                "id": "pm_experience_choice",
+                "type": "choice",
+                "label": "Have you managed a project of this size before?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "pm_experience_choice"
+                ]
+            },
+            {
+                "id": "pm_experience_support_1500",
+                "type": "text_long",
+                "label": "What support will you have to manage the project?",
+                "condition": {
+                    "questionId": "pm_experience_choice",
+                    "equals": "no"
+                },
+                "outputSlots": [
+                    "pm_experience_support_1500"
+                ]
+            },
+            {
+                "id": "risks_narrative_helpers",
+                "type": "table",
+                "label": "Risks & Challenges",
+                "columns": [
+                    {
+                        "id": "risk",
+                        "label": "Risk",
+                        "type": "text"
+                    },
+                    {
+                        "id": "likelihood",
+                        "label": "Likelihood",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "low",
+                                "label": "Low"
+                            },
+                            {
+                                "value": "med",
+                                "label": "Medium"
+                            },
+                            {
+                                "value": "high",
+                                "label": "High"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "impact",
+                        "label": "Impact",
+                        "type": "choice",
+                        "choices": [
+                            {
+                                "value": "low",
+                                "label": "Low"
+                            },
+                            {
+                                "value": "med",
+                                "label": "Medium"
+                            },
+                            {
+                                "value": "high",
+                                "label": "High"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "mitigation",
+                        "label": "Mitigation",
+                        "type": "text"
+                    }
+                ]
+            },
+            {
+                "id": "risks_1500",
+                "type": "text_long",
+                "label": "Describe main risks/challenges and how you'll manage them",
+                "help": "Use the table above to help draft this.",
+                "required": true,
+                "outputSlots": [
+                    "risks_1500"
+                ]
+            }
+        ],
+        "outcomes": [
+            {
+                "id": "outcomes_selected",
+                "type": "multi_choice",
+                "label": "Which ACE outcomes will your project contribute to?",
+                "choices": [
+                    {
+                        "value": "creative_people",
+                        "label": "Creative People"
+                    },
+                    {
+                        "value": "cultural_communities",
+                        "label": "Cultural Communities"
+                    },
+                    {
+                        "value": "creative_cultural_country",
+                        "label": "A Creative and Cultural Country"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "outcomes_selected"
+                ]
+            },
+            {
+                "id": "outcome_creative_people_1500",
+                "type": "text_long",
+                "label": "How will your project contribute to Creative People?",
+                "condition": {
+                    "questionId": "outcomes_selected",
+                    "includes": "creative_people"
+                },
+                "outputSlots": [
+                    "outcome_creative_people_1500"
+                ]
+            },
+            {
+                "id": "outcome_cultural_communities_1500",
+                "type": "text_long",
+                "label": "How will your project contribute to Cultural Communities?",
+                "condition": {
+                    "questionId": "outcomes_selected",
+                    "includes": "cultural_communities"
+                },
+                "outputSlots": [
+                    "outcome_cultural_communities_1500"
+                ]
+            },
+            {
+                "id": "outcome_creative_cultural_country_1500",
+                "type": "text_long",
+                "label": "How will your project contribute to A Creative and Cultural Country?",
+                "condition": {
+                    "questionId": "outcomes_selected",
+                    "includes": "creative_cultural_country"
+                },
+                "outputSlots": [
+                    "outcome_creative_cultural_country_1500"
+                ]
+            }
+        ],
+        "principles": [
+            {
+                "id": "creative_case_1500",
+                "type": "text_long",
+                "label": "How your project addresses the creative case for diversity",
+                "required": true,
+                "outputSlots": [
+                    "creative_case_1500"
+                ]
+            },
+            {
+                "id": "inv_principles_selected",
+                "type": "multi_choice",
+                "label": "Optional Investment Principles",
+                "choices": [
+                    {
+                        "value": "ambition_quality",
+                        "label": "Ambition & Quality"
+                    },
+                    {
+                        "value": "dynamism",
+                        "label": "Dynamism"
+                    },
+                    {
+                        "value": "environmental",
+                        "label": "Environmental Responsibility"
+                    },
+                    {
+                        "value": "inclusivity",
+                        "label": "Inclusivity & Relevance"
+                    }
+                ],
+                "outputSlots": [
+                    "inv_principles_selected"
+                ]
+            },
+            {
+                "id": "inv_principle_ambition_quality",
+                "type": "text_long",
+                "label": "Evidence for Ambition & Quality",
+                "condition": {
+                    "questionId": "inv_principles_selected",
+                    "includes": "ambition_quality"
+                },
+                "outputSlots": [
+                    "inv_principle_ambition_quality"
+                ]
+            },
+            {
+                "id": "inv_principle_dynamism",
+                "type": "text_long",
+                "label": "Evidence for Dynamism",
+                "condition": {
+                    "questionId": "inv_principles_selected",
+                    "includes": "dynamism"
+                },
+                "outputSlots": [
+                    "inv_principle_dynamism"
+                ]
+            }
+        ],
+        "submit": [
+            {
+                "id": "attachments_tracker",
+                "type": "multi_choice",
+                "label": "What attachments do you have ready?",
+                "choices": [
+                    {
+                        "value": "work_samples",
+                        "label": "Work samples"
+                    },
+                    {
+                        "value": "letters_support",
+                        "label": "Letters of support"
+                    },
+                    {
+                        "value": "cv",
+                        "label": "CV"
+                    },
+                    {
+                        "value": "access_rider",
+                        "label": "Access rider / plan"
+                    }
+                ],
+                "outputSlots": [
+                    "attachments_checklist"
+                ]
+            }
+        ]
+    },
+    "outputs": [
+        {
+            "id": "project_summary_300",
+            "title": "Project summary (Max 300 chars)",
+            "type": "paragraph",
+            "requiredInputs": [
+                "q_one_sentence",
+                "q_target_audience",
+                "q_format",
+                "q_rough_dates"
+            ],
+            "template": [
+                "{q_one_sentence} This project is for {q_target_audience} and will be delivered via {q_format} between {q_rough_dates}."
+            ]
+        },
+        {
+            "id": "project_description_800",
+            "title": "Detailed description (Max 800 chars)",
+            "type": "paragraph",
+            "requiredInputs": [
+                "q_activities_list"
+            ],
+            "template": [
+                "Activities: {q_activities_list}",
+                "Collaborators: {q_collaborators}",
+                "Format/Locations: {q_delivery_format_loc}"
+            ]
+        },
+        {
+            "id": "beneficiaries_table",
+            "title": "Who benefits table",
+            "type": "paragraph",
+            "requiredInputs": [
+                "beneficiaries_table"
+            ],
+            "template": [
+                "{beneficiaries_table}"
+            ]
+        },
+        {
+            "id": "beneficiary_calc_800",
+            "title": "How figures were worked out",
+            "type": "paragraph",
+            "requiredInputs": [
+                "beneficiary_calc_800"
+            ],
+            "template": [
+                "{beneficiary_calc_800}"
+            ]
+        },
+        {
+            "id": "experience_modes",
+            "title": "Experience modes",
+            "type": "paragraph",
+            "requiredInputs": [
+                "experience_modes"
+            ],
+            "template": [
+                "{experience_modes}"
+            ]
+        },
+        {
+            "id": "longer_term_benefit_800",
+            "title": "Longer-term engagement benefit",
+            "type": "paragraph",
+            "requiredInputs": [
+                "longer_term_benefit_800"
+            ],
+            "template": [
+                "{longer_term_benefit_800}"
+            ]
+        },
+        {
+            "id": "activity_locations_table",
+            "title": "Locations & activity instances",
+            "type": "paragraph",
+            "requiredInputs": [
+                "activity_locations_table"
+            ],
+            "template": [
+                "{activity_locations_table}"
+            ]
+        },
+        {
+            "id": "project_start_date",
+            "title": "Project start date",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_start_date"
+            ],
+            "template": [
+                "{project_start_date}"
+            ]
+        },
+        {
+            "id": "project_end_date",
+            "title": "Project end date",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_end_date"
+            ],
+            "template": [
+                "{project_end_date}"
+            ]
+        },
+        {
+            "id": "project_plan_table",
+            "title": "Project plan table",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_plan_table"
+            ],
+            "template": [
+                "{project_plan_table}"
+            ]
+        },
+        {
+            "id": "budget_income_table",
+            "title": "Budget: Income",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_income_table"
+            ],
+            "template": [
+                "{budget_income_table}"
+            ]
+        },
+        {
+            "id": "match_funding_1500",
+            "title": "Match funding narrative",
+            "type": "paragraph",
+            "requiredInputs": [
+                "match_funding_1500"
+            ],
+            "template": [
+                "{match_funding_1500}"
+            ]
+        },
+        {
+            "id": "budget_expenditure_table",
+            "title": "Budget: Expenditure",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_expenditure_table"
+            ],
+            "template": [
+                "{budget_expenditure_table}"
+            ]
+        },
+        {
+            "id": "budget_experience_choice",
+            "title": "Budget experience choice",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_experience_choice"
+            ],
+            "template": [
+                "{budget_experience_choice}"
+            ]
+        },
+        {
+            "id": "budget_experience_support_1500",
+            "title": "Budget experience support",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_experience_support_1500"
+            ],
+            "template": [
+                "{budget_experience_support_1500}"
+            ]
+        },
+        {
+            "id": "partners_table",
+            "title": "Partners & collaborators",
+            "type": "paragraph",
+            "requiredInputs": [
+                "partners_table"
+            ],
+            "template": [
+                "{partners_table}"
+            ]
+        },
+        {
+            "id": "pm_experience_choice",
+            "title": "Project management experience",
+            "type": "paragraph",
+            "requiredInputs": [
+                "pm_experience_choice"
+            ],
+            "template": [
+                "{pm_experience_choice}"
+            ]
+        },
+        {
+            "id": "pm_experience_support_1500",
+            "title": "PM experience support",
+            "type": "paragraph",
+            "requiredInputs": [
+                "pm_experience_support_1500"
+            ],
+            "template": [
+                "{pm_experience_support_1500}"
+            ]
+        },
+        {
+            "id": "risks_1500",
+            "title": "Risks & challenges narrative",
+            "type": "paragraph",
+            "requiredInputs": [
+                "risks_1500"
+            ],
+            "template": [
+                "{risks_1500}"
+            ]
+        },
+        {
+            "id": "outcomes_selected",
+            "title": "ACE Outcomes selected",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcomes_selected"
+            ],
+            "template": [
+                "{outcomes_selected}"
+            ]
+        },
+        {
+            "id": "outcome_creative_people_1500",
+            "title": "Creative People narrative",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcome_creative_people_1500"
+            ],
+            "template": [
+                "{outcome_creative_people_1500}"
+            ]
+        },
+        {
+            "id": "outcome_cultural_communities_1500",
+            "title": "Cultural Communities narrative",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcome_cultural_communities_1500"
+            ],
+            "template": [
+                "{outcome_cultural_communities_1500}"
+            ]
+        },
+        {
+            "id": "outcome_creative_cultural_country_1500",
+            "title": "Creative and Cultural Country narrative",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcome_creative_cultural_country_1500"
+            ],
+            "template": [
+                "{outcome_creative_cultural_country_1500}"
+            ]
+        },
+        {
+            "id": "creative_case_1500",
+            "title": "Creative Case for Diversity",
+            "type": "paragraph",
+            "requiredInputs": [
+                "creative_case_1500"
+            ],
+            "template": [
+                "{creative_case_1500}"
+            ]
+        },
+        {
+            "id": "inv_principles_selected",
+            "title": "Optional Investment Principles selected",
+            "type": "paragraph",
+            "requiredInputs": [
+                "inv_principles_selected"
+            ],
+            "template": [
+                "{inv_principles_selected}"
+            ]
+        },
+        {
+            "id": "inv_principle_ambition_quality",
+            "title": "Ambition & Quality evidence",
+            "type": "paragraph",
+            "requiredInputs": [
+                "inv_principle_ambition_quality"
+            ],
+            "template": [
+                "{inv_principle_ambition_quality}"
+            ]
+        },
+        {
+            "id": "inv_principle_dynamism",
+            "title": "Dynamism evidence",
+            "type": "paragraph",
+            "requiredInputs": [
+                "inv_principle_dynamism"
+            ],
+            "template": [
+                "{inv_principle_dynamism}"
+            ]
+        },
+        {
+            "id": "attachments_checklist",
+            "title": "Attachments checklist",
+            "type": "paragraph",
+            "requiredInputs": [
+                "attachments_tracker"
+            ],
+            "template": [
+                "{attachments_tracker}"
+            ]
+        }
+    ]
+}

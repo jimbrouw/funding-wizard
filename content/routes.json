@@ -1,0 +1,129 @@
+{
+    "routes": [
+        {
+            "id": "ace_project_grants",
+            "title": "ACE Project Grants",
+            "status": "active"
+        },
+        {
+            "id": "ace_dycp",
+            "title": "ACE DYCP",
+            "status": "placeholder"
+        },
+        {
+            "id": "other",
+            "title": "Other funder",
+            "status": "placeholder"
+        }
+    ],
+    "qualifyingQuiz": {
+        "id": "route_quiz_v1",
+        "questions": [
+            {
+                "id": "location_england",
+                "type": "choice",
+                "label": "Are you based in England?",
+                "help": "ACE Project Grants are primarily for applicants based in England.",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "who_are_you",
+                "type": "choice",
+                "label": "Who are you applying as?",
+                "choices": [
+                    {
+                        "value": "individual",
+                        "label": "An individual artist/practitioner"
+                    },
+                    {
+                        "value": "collective",
+                        "label": "A collective or group"
+                    },
+                    {
+                        "value": "org",
+                        "label": "An organisation"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "discipline",
+                "type": "choice",
+                "label": "What is your primary discipline?",
+                "choices": [
+                    {
+                        "value": "visual",
+                        "label": "Visual Arts"
+                    },
+                    {
+                        "value": "music",
+                        "label": "Music"
+                    },
+                    {
+                        "value": "theatre",
+                        "label": "Theatre"
+                    },
+                    {
+                        "value": "dance",
+                        "label": "Dance"
+                    },
+                    {
+                        "value": "literature",
+                        "label": "Literature"
+                    },
+                    {
+                        "value": "combined",
+                        "label": "Combined Arts"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "q_goal",
+                "type": "choice",
+                "label": "What best describes your goal?",
+                "choices": [
+                    {
+                        "value": "public_project",
+                        "label": "A time-limited project for an audience/public outcome"
+                    },
+                    {
+                        "value": "practice_dev",
+                        "label": "My own development (skills, networks, research)"
+                    }
+                ],
+                "required": true
+            }
+        ],
+        "recommendations": [
+            {
+                "if": [
+                    {
+                        "questionId": "q_goal",
+                        "equals": "public_project"
+                    }
+                ],
+                "routeId": "ace_project_grants"
+            },
+            {
+                "if": [
+                    {
+                        "questionId": "q_goal",
+                        "equals": "practice_dev"
+                    }
+                ],
+                "routeId": "ace_dycp"
+            }
+        ]
+    }
+}
