@@ -65,6 +65,13 @@ export default function AppShell({
                             >
                                 Alerts
                             </Link>
+                            <div className="w-px h-5 bg-slate-200 mx-1" />
+                            <Link
+                                href="/subscribe"
+                                className="px-3 py-2 text-sm font-bold text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors"
+                            >
+                                Subscribe
+                            </Link>
                         </nav>
                     </div>
 

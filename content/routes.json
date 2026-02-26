@@ -3,12 +3,38 @@
         {
             "id": "ace_project_grants",
             "title": "ACE Project Grants",
+            "subtitle": "England · Individuals & Orgs · up to £30k",
             "status": "active"
         },
         {
             "id": "ace_dycp",
             "title": "ACE DYCP",
+            "subtitle": "England · Individuals · Personal development",
             "status": "placeholder"
+        },
+        {
+            "id": "creative_scotland_open_fund",
+            "title": "Creative Scotland Open Fund",
+            "subtitle": "Scotland · Individuals · £500–£50k · Rolling",
+            "status": "active"
+        },
+        {
+            "id": "nlhf_project_grants",
+            "title": "National Lottery Heritage Fund",
+            "subtitle": "UK-wide · Orgs & Community Groups · £10k–£250k · Rolling",
+            "status": "active"
+        },
+        {
+            "id": "jerwood_arts_fund",
+            "title": "Jerwood Foundation Open Fund",
+            "subtitle": "UK · Orgs only · up to £40k · Rounds (Spring/Summer/Winter)",
+            "status": "active"
+        },
+        {
+            "id": "phf_arts_access",
+            "title": "Paul Hamlyn – Arts Access & Participation",
+            "subtitle": "UK · Orgs (£60k+ turnover) · £30k–£400k · Rolling",
+            "status": "active"
         },
         {
             "id": "other",
@@ -17,21 +43,29 @@
         }
     ],
     "qualifyingQuiz": {
-        "id": "route_quiz_v1",
+        "id": "route_quiz_v2",
         "questions": [
             {
-                "id": "location_england",
+                "id": "location",
                 "type": "choice",
-                "label": "Are you based in England?",
-                "help": "ACE Project Grants are primarily for applicants based in England.",
+                "label": "Where are you based?",
+                "help": "Some funders are restricted by geography.",
                 "choices": [
                     {
-                        "value": "yes",
-                        "label": "Yes"
+                        "value": "england",
+                        "label": "England"
                     },
                     {
-                        "value": "no",
-                        "label": "No"
+                        "value": "scotland",
+                        "label": "Scotland"
+                    },
+                    {
+                        "value": "wales",
+                        "label": "Wales"
+                    },
+                    {
+                        "value": "ni",
+                        "label": "Northern Ireland"
                     }
                 ],
                 "required": true
@@ -43,7 +77,7 @@
                 "choices": [
                     {
                         "value": "individual",
-                        "label": "An individual artist/practitioner"
+                        "label": "An individual artist / practitioner"
                     },
                     {
                         "value": "collective",
@@ -51,7 +85,7 @@
                     },
                     {
                         "value": "org",
-                        "label": "An organisation"
+                        "label": "An organisation (charity, CIC, etc.)"
                     }
                 ],
                 "required": true
@@ -83,7 +117,19 @@
                     },
                     {
                         "value": "combined",
-                        "label": "Combined Arts"
+                        "label": "Combined Arts / Multi-artform"
+                    },
+                    {
+                        "value": "heritage",
+                        "label": "Heritage / Museums / Archives"
+                    },
+                    {
+                        "value": "film",
+                        "label": "Film / Digital / Screen"
+                    },
+                    {
+                        "value": "craft",
+                        "label": "Craft & Design"
                     }
                 ],
                 "required": true
@@ -95,11 +141,19 @@
                 "choices": [
                     {
                         "value": "public_project",
-                        "label": "A time-limited project for an audience/public outcome"
+                        "label": "A time-limited project for an audience / public outcome"
                     },
                     {
                         "value": "practice_dev",
                         "label": "My own development (skills, networks, research)"
+                    },
+                    {
+                        "value": "heritage_project",
+                        "label": "Saving, conserving, or celebrating heritage"
+                    },
+                    {
+                        "value": "social_change",
+                        "label": "Art for social change, equity, or participation"
                     }
                 ],
                 "required": true
@@ -108,6 +162,10 @@
         "recommendations": [
             {
                 "if": [
+                    {
+                        "questionId": "location",
+                        "equals": "england"
+                    },
                     {
                         "questionId": "q_goal",
                         "equals": "public_project"
@@ -118,11 +176,59 @@
             {
                 "if": [
                     {
+                        "questionId": "location",
+                        "equals": "england"
+                    },
+                    {
                         "questionId": "q_goal",
                         "equals": "practice_dev"
                     }
                 ],
                 "routeId": "ace_dycp"
+            },
+            {
+                "if": [
+                    {
+                        "questionId": "location",
+                        "equals": "scotland"
+                    }
+                ],
+                "routeId": "creative_scotland_open_fund"
+            },
+            {
+                "if": [
+                    {
+                        "questionId": "q_goal",
+                        "equals": "heritage_project"
+                    }
+                ],
+                "routeId": "nlhf_project_grants"
+            },
+            {
+                "if": [
+                    {
+                        "questionId": "who_are_you",
+                        "equals": "org"
+                    },
+                    {
+                        "questionId": "q_goal",
+                        "equals": "public_project"
+                    }
+                ],
+                "routeId": "jerwood_arts_fund"
+            },
+            {
+                "if": [
+                    {
+                        "questionId": "who_are_you",
+                        "equals": "org"
+                    },
+                    {
+                        "questionId": "q_goal",
+                        "equals": "social_change"
+                    }
+                ],
+                "routeId": "phf_arts_access"
             }
         ]
     }

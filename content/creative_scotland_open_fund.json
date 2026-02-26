@@ -1,0 +1,355 @@
+{
+    "routeId": "creative_scotland_open_fund",
+    "title": "Creative Scotland Open Fund for Individuals (£500–£50k)",
+    "steps": [
+        {
+            "id": "elig",
+            "title": "Eligibility",
+            "intro": "Confirm you meet the basic criteria for this fund."
+        },
+        {
+            "id": "your_idea",
+            "title": "Your Idea",
+            "intro": "Describe what you want to do and why."
+        },
+        {
+            "id": "outcomes",
+            "title": "Outcomes & Impact",
+            "intro": "What will change as a result of this work?"
+        },
+        {
+            "id": "budget",
+            "title": "Budget",
+            "intro": "How much you need and how you'll manage it."
+        },
+        {
+            "id": "your_practice",
+            "title": "Your Practice",
+            "intro": "Your experience and why this matters now."
+        }
+    ],
+    "questions": {
+        "elig": [
+            {
+                "id": "elig_project_name",
+                "type": "text_short",
+                "label": "Project or activity name",
+                "required": true
+            },
+            {
+                "id": "elig_based_scotland",
+                "type": "choice",
+                "label": "Are you based in Scotland?",
+                "help": "This fund is for freelance and self-employed artists and creative practitioners living in Scotland.",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_age_18",
+                "type": "choice",
+                "label": "Are you 18 or over and not in full-time education?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_uk_bank",
+                "type": "choice",
+                "label": "Do you have a UK bank account?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_amount_requested",
+                "type": "currency_gbp",
+                "label": "Total amount requested",
+                "help": "Between £500 and £50,000. Applications over £5,000 require more detailed information.",
+                "required": true
+            }
+        ],
+        "your_idea": [
+            {
+                "id": "cs_one_sentence",
+                "type": "text_short",
+                "label": "What is your project in one sentence?",
+                "required": true,
+                "coachingTip": "Lead with the change, not the activity. 'I want to create a body of new photographic work exploring...' is stronger than 'I want to take photographs.'",
+                "outputSlots": [
+                    "project_summary"
+                ]
+            },
+            {
+                "id": "cs_art_form",
+                "type": "choice",
+                "label": "What art form or creative practice does this involve?",
+                "choices": [
+                    {
+                        "value": "craft",
+                        "label": "Craft & Design"
+                    },
+                    {
+                        "value": "dance",
+                        "label": "Dance"
+                    },
+                    {
+                        "value": "digital",
+                        "label": "Digital / Screen"
+                    },
+                    {
+                        "value": "literature",
+                        "label": "Literature & Publishing"
+                    },
+                    {
+                        "value": "multi",
+                        "label": "Multi-artform"
+                    },
+                    {
+                        "value": "music",
+                        "label": "Music"
+                    },
+                    {
+                        "value": "theatre",
+                        "label": "Theatre"
+                    },
+                    {
+                        "value": "visual",
+                        "label": "Visual Art"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "art_form"
+                ]
+            },
+            {
+                "id": "cs_what_will_you_do",
+                "type": "text_long",
+                "label": "Describe what you want to do",
+                "help": "Include what the activity is, where it will happen, and who else is involved.",
+                "coachingTip": "Show, don't tell. Instead of 'I will develop my practice', describe the specific activities: residencies, collaborations, performances, research trips. Paint a picture the assessor can see.",
+                "required": true,
+                "outputSlots": [
+                    "project_description"
+                ]
+            },
+            {
+                "id": "cs_why_now",
+                "type": "text_long",
+                "label": "Why is now the right time for this?",
+                "help": "What's happening in your career that makes this the right moment?",
+                "coachingTip": "Connect to momentum. Have you just finished a residency, received a commission, or had a breakthrough? Show the assessor that this isn't random — it's the logical next step.",
+                "outputSlots": [
+                    "project_description"
+                ]
+            },
+            {
+                "id": "cs_start_date",
+                "type": "date",
+                "label": "Proposed start date",
+                "required": true,
+                "outputSlots": [
+                    "start_date"
+                ]
+            },
+            {
+                "id": "cs_end_date",
+                "type": "date",
+                "label": "Proposed end date",
+                "help": "Activity can be supported for up to 24 months.",
+                "required": true,
+                "outputSlots": [
+                    "end_date"
+                ]
+            }
+        ],
+        "outcomes": [
+            {
+                "id": "cs_outcomes",
+                "type": "text_long",
+                "label": "What outcomes do you hope to achieve?",
+                "help": "Describe the benefits and impacts of your activity — for you, for audiences, for the wider sector.",
+                "coachingTip": "Be specific. 'I will grow as an artist' is vague. 'I will develop a new 40-minute performance piece ready for touring to 3 venues in Autumn 2027' is concrete and assessable.",
+                "required": true,
+                "outputSlots": [
+                    "outcomes"
+                ]
+            },
+            {
+                "id": "cs_who_benefits",
+                "type": "text_long",
+                "label": "Who will experience or benefit from this work?",
+                "help": "Think about direct participants, audiences, communities, and the wider sector.",
+                "coachingTip": "Name them. '200 audience members at CCA Glasgow' beats 'the general public'. Funders want to see you know exactly who you're reaching.",
+                "outputSlots": [
+                    "beneficiaries"
+                ]
+            },
+            {
+                "id": "cs_public_engagement",
+                "type": "choice",
+                "label": "Will there be a public-facing element?",
+                "choices": [
+                    {
+                        "value": "yes_performance",
+                        "label": "Yes — live performance or exhibition"
+                    },
+                    {
+                        "value": "yes_digital",
+                        "label": "Yes — digital/online sharing"
+                    },
+                    {
+                        "value": "yes_both",
+                        "label": "Yes — both live and digital"
+                    },
+                    {
+                        "value": "no_rd_only",
+                        "label": "No — this is R&D / development only"
+                    }
+                ],
+                "outputSlots": [
+                    "public_engagement"
+                ]
+            }
+        ],
+        "budget": [
+            {
+                "id": "cs_budget_breakdown",
+                "type": "text_long",
+                "label": "Budget breakdown",
+                "help": "List your main costs: artist fees/time, materials, travel, venue hire, marketing, access costs, contingency.",
+                "coachingTip": "Don't inflate — but don't undersell yourself either. Pay yourself a proper day rate. Creative Scotland expects to see fair pay for artists. Check the Scottish Artists Union rate card.",
+                "required": true,
+                "outputSlots": [
+                    "budget_breakdown"
+                ]
+            },
+            {
+                "id": "cs_other_funding",
+                "type": "text_long",
+                "label": "Are you receiving funding from any other source for this activity?",
+                "help": "Include confirmed and pending funding, in-kind support, or your own contribution.",
+                "outputSlots": [
+                    "other_funding"
+                ]
+            },
+            {
+                "id": "cs_financial_management",
+                "type": "text_long",
+                "label": "How will you manage the finances?",
+                "help": "Required for applications over £5,000. Describe your approach to financial management and record-keeping.",
+                "condition": {
+                    "questionId": "elig_amount_requested",
+                    "greaterThan": 5000
+                },
+                "outputSlots": [
+                    "financial_management"
+                ]
+            }
+        ],
+        "your_practice": [
+            {
+                "id": "cs_experience",
+                "type": "text_long",
+                "label": "Tell us about your creative practice",
+                "help": "Your background, previous work, and what drives your practice.",
+                "coachingTip": "This is your storytelling moment. Don't list your CV — share one or two specific examples that show who you are as an artist. A single vivid project description proves more than a page of credentials.",
+                "required": true,
+                "outputSlots": [
+                    "experience"
+                ]
+            },
+            {
+                "id": "cs_links",
+                "type": "text_long",
+                "label": "Links to previous work",
+                "help": "Website, portfolio, video links, or press coverage.",
+                "outputSlots": [
+                    "support_materials"
+                ]
+            }
+        ]
+    },
+    "outputSlots": [
+        {
+            "id": "project_summary",
+            "title": "Project Summary",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_summary"
+            ],
+            "template": [
+                "{project_summary}"
+            ]
+        },
+        {
+            "id": "project_description",
+            "title": "Project Description",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_description"
+            ],
+            "template": [
+                "{project_description}"
+            ]
+        },
+        {
+            "id": "outcomes",
+            "title": "Outcomes",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcomes"
+            ],
+            "template": [
+                "{outcomes}"
+            ]
+        },
+        {
+            "id": "budget_breakdown",
+            "title": "Budget",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_breakdown"
+            ],
+            "template": [
+                "{budget_breakdown}"
+            ]
+        },
+        {
+            "id": "experience",
+            "title": "Your Practice",
+            "type": "paragraph",
+            "requiredInputs": [
+                "experience"
+            ],
+            "template": [
+                "{experience}"
+            ]
+        }
+    ]
+}

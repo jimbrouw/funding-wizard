@@ -1,0 +1,319 @@
+{
+    "routeId": "jerwood_arts_fund",
+    "title": "Jerwood Foundation Open Fund (up to £40k, orgs only)",
+    "steps": [
+        {
+            "id": "elig",
+            "title": "Eligibility",
+            "intro": "Confirm your organisation meets the Jerwood criteria."
+        },
+        {
+            "id": "summary",
+            "title": "Project Summary",
+            "intro": "The headline overview of your proposal."
+        },
+        {
+            "id": "project",
+            "title": "Project Description",
+            "intro": "What you'll do, who benefits, and your timeline."
+        },
+        {
+            "id": "budget",
+            "title": "Budget & Fundraising",
+            "intro": "Your full budget and how the project is funded."
+        },
+        {
+            "id": "impact",
+            "title": "Artistic Impact",
+            "intro": "Excellence, emerging talent, and public access."
+        }
+    ],
+    "questions": {
+        "elig": [
+            {
+                "id": "elig_project_name",
+                "type": "text_short",
+                "label": "Project name",
+                "required": true
+            },
+            {
+                "id": "elig_org_type",
+                "type": "choice",
+                "label": "What type of organisation are you?",
+                "help": "Jerwood funds UK-based registered charities, CIOs, or properly constituted organisations with charitable purposes. They do not fund individuals.",
+                "choices": [
+                    {
+                        "value": "charity",
+                        "label": "Registered charity"
+                    },
+                    {
+                        "value": "cio",
+                        "label": "CIO (Charitable Incorporated Organisation)"
+                    },
+                    {
+                        "value": "constituted",
+                        "label": "Properly constituted organisation with charitable purposes"
+                    },
+                    {
+                        "value": "individual",
+                        "label": "Individual (not eligible)"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_public_element",
+                "type": "choice",
+                "label": "Does the project have a clear public presentation or engagement element?",
+                "help": "Jerwood does not fund projects without public-facing outcomes.",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_amount_requested",
+                "type": "currency_gbp",
+                "label": "Grant amount requested",
+                "help": "Jerwood typically funds up to £40,000. State your requested amount and preferred payment date.",
+                "required": true
+            }
+        ],
+        "summary": [
+            {
+                "id": "jw_short_summary",
+                "type": "text_long",
+                "label": "Short summary of the project",
+                "help": "A concise overview including your organisation's location and where the activity takes place.",
+                "coachingTip": "This is the first thing the panel reads. Make it vivid and specific in 2-3 sentences. 'Jerwood Arts presents a new commissioning programme working with 4 emerging sound artists to create site-specific installations across 3 Northern cities' — that's a summary that sells.",
+                "required": true,
+                "outputSlots": [
+                    "project_summary"
+                ]
+            },
+            {
+                "id": "jw_org_location",
+                "type": "text_short",
+                "label": "Organisation location",
+                "required": true,
+                "outputSlots": [
+                    "org_location"
+                ]
+            },
+            {
+                "id": "jw_activity_location",
+                "type": "text_short",
+                "label": "Where will the activity take place?",
+                "outputSlots": [
+                    "activity_location"
+                ]
+            },
+            {
+                "id": "jw_payment_date",
+                "type": "text_short",
+                "label": "Preferred payment date",
+                "help": "When would you need the grant to be paid?",
+                "outputSlots": [
+                    "payment_date"
+                ]
+            }
+        ],
+        "project": [
+            {
+                "id": "jw_project_description",
+                "type": "text_long",
+                "label": "Full project description",
+                "help": "Your proposal should be a maximum of 10 sides of A4. Describe the project, its objectives, and how it aligns with Jerwood's focus.",
+                "coachingTip": "Jerwood cares deeply about artistic excellence and supporting emerging talent. Lead with the art, not the admin. What is artistically exciting about this project? What will the artists create that wouldn't exist without this funding?",
+                "required": true,
+                "outputSlots": [
+                    "project_description"
+                ]
+            },
+            {
+                "id": "jw_start_date",
+                "type": "date",
+                "label": "Project start date",
+                "required": true,
+                "outputSlots": [
+                    "start_date"
+                ]
+            },
+            {
+                "id": "jw_timeline",
+                "type": "text_long",
+                "label": "Summary timeline",
+                "help": "Key milestones and phases of the project.",
+                "coachingTip": "A clear timeline shows you've planned this properly. Include: development phase, production/creation, public presentation, and evaluation/documentation.",
+                "required": true,
+                "outputSlots": [
+                    "timeline"
+                ]
+            },
+            {
+                "id": "jw_beneficiaries",
+                "type": "text_long",
+                "label": "Who are the direct beneficiaries?",
+                "help": "Number of artists involved, audience figures, participants.",
+                "coachingTip": "Name the artists if you can. '4 early-career sound artists selected through an open call' is more credible than 'emerging artists'. Show how you'll find and select them.",
+                "required": true,
+                "outputSlots": [
+                    "beneficiaries"
+                ]
+            },
+            {
+                "id": "jw_audience_figures",
+                "type": "text_short",
+                "label": "Projected audience figures",
+                "outputSlots": [
+                    "audience_figures"
+                ]
+            }
+        ],
+        "budget": [
+            {
+                "id": "jw_budget",
+                "type": "text_long",
+                "label": "Comprehensive budget",
+                "help": "Full income and expenditure. Show all funding sources, not just the Jerwood request.",
+                "coachingTip": "Jerwood wants to see a realistic, well-researched budget. Pay artists properly. Include marketing, documentation, access costs, and evaluation. Show the full picture, not just the grant-funded portion.",
+                "required": true,
+                "outputSlots": [
+                    "budget"
+                ]
+            },
+            {
+                "id": "jw_fundraising_plan",
+                "type": "text_long",
+                "label": "Fundraising plan",
+                "help": "How is the rest of the project funded? List confirmed and pending funding, earned income, in-kind support.",
+                "coachingTip": "Having diverse funding sources shows strength. Even small amounts from other trusts, box office income, or in-kind venue partnerships demonstrate that others believe in this project.",
+                "required": true,
+                "outputSlots": [
+                    "fundraising_plan"
+                ]
+            },
+            {
+                "id": "jw_accounts",
+                "type": "choice",
+                "label": "Can you provide latest audited accounts?",
+                "help": "Jerwood requires audited accounts. Small charities not required to audit can provide annual budget with detailed income/expenditure.",
+                "choices": [
+                    {
+                        "value": "yes_audited",
+                        "label": "Yes — we have audited accounts"
+                    },
+                    {
+                        "value": "yes_examined",
+                        "label": "Yes — independently examined accounts"
+                    },
+                    {
+                        "value": "small_charity",
+                        "label": "Small charity — we'll provide annual budget"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "accounts_status"
+                ]
+            }
+        ],
+        "impact": [
+            {
+                "id": "jw_artistic_excellence",
+                "type": "text_long",
+                "label": "How does this project support artistic excellence?",
+                "help": "What is artistically ambitious about this work?",
+                "coachingTip": "Jerwood's mission is excellence. They want to see risk-taking, ambition, and genuine artistic innovation — not safe programming. What makes this project creatively exciting and different?",
+                "required": true,
+                "outputSlots": [
+                    "artistic_excellence"
+                ]
+            },
+            {
+                "id": "jw_emerging_talent",
+                "type": "text_long",
+                "label": "How does this support emerging talent?",
+                "help": "How will early-career artists benefit? What development opportunities are built in?",
+                "coachingTip": "This is central to Jerwood's identity. Show a clear pathway: how do the artists grow through this project? What skills, networks, or platforms will they gain?",
+                "required": true,
+                "outputSlots": [
+                    "emerging_talent"
+                ]
+            },
+            {
+                "id": "jw_public_access",
+                "type": "text_long",
+                "label": "How will you ensure public access and engagement?",
+                "help": "How will audiences experience this work? What will you do to ensure accessibility?",
+                "outputSlots": [
+                    "public_access"
+                ]
+            }
+        ]
+    },
+    "outputSlots": [
+        {
+            "id": "project_summary",
+            "title": "Project Summary",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_summary"
+            ],
+            "template": [
+                "{project_summary}"
+            ]
+        },
+        {
+            "id": "project_description",
+            "title": "Project Description",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_description"
+            ],
+            "template": [
+                "{project_description}"
+            ]
+        },
+        {
+            "id": "artistic_excellence",
+            "title": "Artistic Excellence",
+            "type": "paragraph",
+            "requiredInputs": [
+                "artistic_excellence"
+            ],
+            "template": [
+                "{artistic_excellence}"
+            ]
+        },
+        {
+            "id": "emerging_talent",
+            "title": "Emerging Talent",
+            "type": "paragraph",
+            "requiredInputs": [
+                "emerging_talent"
+            ],
+            "template": [
+                "{emerging_talent}"
+            ]
+        },
+        {
+            "id": "budget",
+            "title": "Budget",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget"
+            ],
+            "template": [
+                "{budget}"
+            ]
+        }
+    ]
+}

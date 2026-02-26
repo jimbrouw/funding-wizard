@@ -1,0 +1,404 @@
+{
+    "routeId": "nlhf_project_grants",
+    "title": "National Lottery Heritage Fund (£10k–£250k)",
+    "steps": [
+        {
+            "id": "elig",
+            "title": "Eligibility",
+            "intro": "Confirm your project involves heritage and you're eligible to apply."
+        },
+        {
+            "id": "vision",
+            "title": "Your Vision",
+            "intro": "What you want to achieve and the legacy you'll leave."
+        },
+        {
+            "id": "heritage",
+            "title": "Heritage Focus",
+            "intro": "Describe the heritage at the heart of your project."
+        },
+        {
+            "id": "project_plan",
+            "title": "Project Plan",
+            "intro": "What you'll do, when, and how."
+        },
+        {
+            "id": "outcomes",
+            "title": "Outcomes",
+            "intro": "How your project delivers against NLHF's programme outcomes."
+        },
+        {
+            "id": "budget",
+            "title": "Budget",
+            "intro": "Cost breakdown, partnership funding, and VAT status."
+        }
+    ],
+    "questions": {
+        "elig": [
+            {
+                "id": "elig_project_name",
+                "type": "text_short",
+                "label": "Project name",
+                "required": true
+            },
+            {
+                "id": "elig_uk_based",
+                "type": "choice",
+                "label": "Is your project based in the UK?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_org_type",
+                "type": "choice",
+                "label": "What type of organisation are you?",
+                "choices": [
+                    {
+                        "value": "charity",
+                        "label": "Registered charity"
+                    },
+                    {
+                        "value": "community_group",
+                        "label": "Community or voluntary group"
+                    },
+                    {
+                        "value": "local_authority",
+                        "label": "Local authority"
+                    },
+                    {
+                        "value": "social_enterprise",
+                        "label": "Social enterprise / CIC"
+                    },
+                    {
+                        "value": "private_owner",
+                        "label": "Private owner of heritage"
+                    },
+                    {
+                        "value": "other",
+                        "label": "Other not-for-profit"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_heritage_type",
+                "type": "multi_choice",
+                "label": "What type of heritage does your project involve?",
+                "choices": [
+                    {
+                        "value": "buildings",
+                        "label": "Historic buildings or monuments"
+                    },
+                    {
+                        "value": "museums",
+                        "label": "Museums, libraries, archives"
+                    },
+                    {
+                        "value": "parks_gardens",
+                        "label": "Parks, gardens, or designed landscapes"
+                    },
+                    {
+                        "value": "nature",
+                        "label": "Natural heritage / landscapes"
+                    },
+                    {
+                        "value": "intangible",
+                        "label": "Intangible heritage (oral histories, traditions, skills)"
+                    },
+                    {
+                        "value": "industrial",
+                        "label": "Industrial, maritime, or transport heritage"
+                    },
+                    {
+                        "value": "community",
+                        "label": "Community heritage / cultural traditions"
+                    },
+                    {
+                        "value": "digital",
+                        "label": "Digital heritage"
+                    }
+                ],
+                "required": true,
+                "outputSlots": [
+                    "heritage_type"
+                ]
+            },
+            {
+                "id": "elig_amount_requested",
+                "type": "currency_gbp",
+                "label": "Total amount requested from the Heritage Fund",
+                "help": "This route covers grants between £10,000 and £250,000. No specific deadlines — decisions within 8 weeks.",
+                "required": true
+            }
+        ],
+        "vision": [
+            {
+                "id": "nlhf_vision",
+                "type": "text_long",
+                "label": "What does your organisation want to achieve through this project?",
+                "help": "Describe your vision and the hoped-for legacy. Max 150 words on the actual form.",
+                "coachingTip": "Think legacy, not logistics. Don't describe activities here — describe the CHANGE. What will be different in 5 years because this project happened?",
+                "required": true,
+                "outputSlots": [
+                    "vision"
+                ]
+            },
+            {
+                "id": "nlhf_enquiry_advice",
+                "type": "text_long",
+                "label": "Have you received any advice from the Heritage Fund?",
+                "help": "If you used the Project Enquiry service, summarise the advice you received and how it influenced your project.",
+                "coachingTip": "Using the free Project Enquiry service before applying significantly improves your chances. If you haven't done this yet, consider pausing and requesting feedback first.",
+                "outputSlots": [
+                    "enquiry_advice"
+                ]
+            }
+        ],
+        "heritage": [
+            {
+                "id": "nlhf_heritage_description",
+                "type": "text_long",
+                "label": "Describe the heritage as it is today",
+                "help": "Include factual information. If physical: size, age, features, condition, importance, official recognition. If non-physical: subject area and time period.",
+                "coachingTip": "Be a journalist here, not a marketer. State the facts: when was it built, what condition is it in, what records exist. The emotion comes later — first, establish the reality.",
+                "required": true,
+                "outputSlots": [
+                    "heritage_description"
+                ]
+            },
+            {
+                "id": "nlhf_heritage_at_risk",
+                "type": "text_long",
+                "label": "Is this heritage at risk? If so, how?",
+                "help": "Threats could include physical damage, neglect, financial shortfall, loss of oral histories, restricted public access.",
+                "coachingTip": "If the heritage IS at risk, this strengthens your case enormously. Be specific: 'The roof has been leaking since 2019 and 40% of the archive is water-damaged' is powerful. Don't exaggerate — but don't downplay either.",
+                "outputSlots": [
+                    "heritage_risk"
+                ]
+            },
+            {
+                "id": "nlhf_heritage_significance",
+                "type": "text_long",
+                "label": "Why is this heritage important?",
+                "help": "Who values it and why? Is it nationally/locally significant? Any designations (e.g., listed building, scheduled monument)?",
+                "outputSlots": [
+                    "heritage_significance"
+                ]
+            }
+        ],
+        "project_plan": [
+            {
+                "id": "nlhf_activities",
+                "type": "text_long",
+                "label": "What will you do during your project?",
+                "help": "Overview of planned activities, events, restoration, conservation, or community engagement. Max 500 words on the actual form.",
+                "coachingTip": "Structure this clearly: Phase 1 (months 1-3): research and consultation. Phase 2 (months 4-8): delivery. Phase 3 (months 9-12): evaluation and legacy. Assessors skim — make it scannable.",
+                "required": true,
+                "outputSlots": [
+                    "project_activities"
+                ]
+            },
+            {
+                "id": "nlhf_start_date",
+                "type": "date",
+                "label": "Proposed start date",
+                "required": true,
+                "outputSlots": [
+                    "start_date"
+                ]
+            },
+            {
+                "id": "nlhf_end_date",
+                "type": "date",
+                "label": "Proposed end date",
+                "required": true,
+                "outputSlots": [
+                    "end_date"
+                ]
+            },
+            {
+                "id": "nlhf_partnerships",
+                "type": "text_long",
+                "label": "Who are your project partners?",
+                "help": "List any organisations, communities, or individuals you'll work with and their role.",
+                "coachingTip": "Named partners with confirmed commitment are gold. A letter of support from the local council or a museum director transforms 'we plan to work with' into 'we ARE working with'.",
+                "outputSlots": [
+                    "partnerships"
+                ]
+            }
+        ],
+        "outcomes": [
+            {
+                "id": "nlhf_outcome_heritage",
+                "type": "text_long",
+                "label": "How will your project save heritage?",
+                "help": "How will heritage be better managed, in better condition, or better understood?",
+                "coachingTip": "This is NLHF's #1 investment principle. Every project must make heritage more resilient. Even a community oral history project 'saves' heritage by recording it before it's lost.",
+                "required": true,
+                "outputSlots": [
+                    "outcome_heritage"
+                ]
+            },
+            {
+                "id": "nlhf_outcome_environment",
+                "type": "text_long",
+                "label": "How will your project protect the environment?",
+                "help": "Consider sustainability in how you deliver the project, as well as environmental outcomes.",
+                "outputSlots": [
+                    "outcome_environment"
+                ]
+            },
+            {
+                "id": "nlhf_outcome_inclusion",
+                "type": "text_long",
+                "label": "How will you involve a wider range of people?",
+                "help": "All projects must demonstrate inclusion, access, and participation. Who will volunteer? Who will you reach that heritage currently doesn't?",
+                "coachingTip": "This is mandatory — every NLHF project must widen participation. Show you've thought about barriers: physical access, cost, language, digital access. Then show how you'll remove them.",
+                "required": true,
+                "outputSlots": [
+                    "outcome_inclusion"
+                ]
+            },
+            {
+                "id": "nlhf_outcome_sustainability",
+                "type": "text_long",
+                "label": "How will your organisation be more sustainable after this project?",
+                "help": "New skills, increased capacity, stronger partnerships, diversified income.",
+                "outputSlots": [
+                    "outcome_sustainability"
+                ]
+            }
+        ],
+        "budget": [
+            {
+                "id": "nlhf_total_cost",
+                "type": "currency_gbp",
+                "label": "Total project cost",
+                "required": true,
+                "outputSlots": [
+                    "total_cost"
+                ]
+            },
+            {
+                "id": "nlhf_budget_breakdown",
+                "type": "text_long",
+                "label": "Cost breakdown",
+                "help": "List each cost area: staff, materials, professional fees, equipment, contingency (10%), evaluation, access costs.",
+                "coachingTip": "Always include a 10% contingency — NLHF expects it. Include full cost recovery (your staff time, overheads). Don't ask for less than you need; underfunding kills projects.",
+                "required": true,
+                "outputSlots": [
+                    "budget_breakdown"
+                ]
+            },
+            {
+                "id": "nlhf_partnership_funding",
+                "type": "text_long",
+                "label": "Partnership funding and other income",
+                "help": "What other funding have you secured or are applying for? Include cash and in-kind contributions.",
+                "coachingTip": "Having partnership funding — even 10-20% — dramatically strengthens your application. It shows other people believe in this project too.",
+                "outputSlots": [
+                    "partnership_funding"
+                ]
+            },
+            {
+                "id": "nlhf_vat",
+                "type": "choice",
+                "label": "Is your organisation VAT registered?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes — costs shown exclude VAT"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No — costs shown include VAT"
+                    },
+                    {
+                        "value": "partial",
+                        "label": "Partially exempt"
+                    }
+                ],
+                "outputSlots": [
+                    "vat_status"
+                ]
+            }
+        ]
+    },
+    "outputSlots": [
+        {
+            "id": "vision",
+            "title": "Vision Statement",
+            "type": "paragraph",
+            "requiredInputs": [
+                "vision"
+            ],
+            "template": [
+                "{vision}"
+            ]
+        },
+        {
+            "id": "heritage_description",
+            "title": "Heritage Description",
+            "type": "paragraph",
+            "requiredInputs": [
+                "heritage_description"
+            ],
+            "template": [
+                "{heritage_description}"
+            ]
+        },
+        {
+            "id": "project_activities",
+            "title": "Project Activities",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_activities"
+            ],
+            "template": [
+                "{project_activities}"
+            ]
+        },
+        {
+            "id": "outcome_heritage",
+            "title": "Saving Heritage",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcome_heritage"
+            ],
+            "template": [
+                "{outcome_heritage}"
+            ]
+        },
+        {
+            "id": "outcome_inclusion",
+            "title": "Inclusion & Participation",
+            "type": "paragraph",
+            "requiredInputs": [
+                "outcome_inclusion"
+            ],
+            "template": [
+                "{outcome_inclusion}"
+            ]
+        },
+        {
+            "id": "budget_breakdown",
+            "title": "Budget",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_breakdown"
+            ],
+            "template": [
+                "{budget_breakdown}"
+            ]
+        }
+    ]
+}

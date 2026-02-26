@@ -1,0 +1,404 @@
+{
+    "routeId": "phf_arts_access",
+    "title": "Paul Hamlyn Foundation – Arts Access & Participation (£30k–£400k, orgs only)",
+    "steps": [
+        {
+            "id": "elig",
+            "title": "Eligibility",
+            "intro": "Confirm your organisation meets the PHF criteria."
+        },
+        {
+            "id": "your_org",
+            "title": "Your Organisation",
+            "intro": "Who you are and how art intersects with social change."
+        },
+        {
+            "id": "the_work",
+            "title": "The Work",
+            "intro": "What you'll do, who participates, and how lived experience is centred."
+        },
+        {
+            "id": "equity",
+            "title": "Equity & Justice",
+            "intro": "Anti-racist practice, underfunded communities, challenging hierarchies."
+        },
+        {
+            "id": "learning",
+            "title": "Learning & Collaboration",
+            "intro": "How you share learning and think as part of a wider ecosystem."
+        },
+        {
+            "id": "budget",
+            "title": "Budget",
+            "intro": "12 months to 4 years of funding — detailed costs and income."
+        }
+    ],
+    "questions": {
+        "elig": [
+            {
+                "id": "elig_project_name",
+                "type": "text_short",
+                "label": "Project or programme name",
+                "required": true
+            },
+            {
+                "id": "elig_org_type",
+                "type": "choice",
+                "label": "What type of organisation are you?",
+                "help": "PHF funds not-for-profit cultural organisations. This includes charities, community organisations, social enterprises, and non-profit companies active in the arts.",
+                "choices": [
+                    {
+                        "value": "charity",
+                        "label": "Registered charity"
+                    },
+                    {
+                        "value": "cic",
+                        "label": "Community Interest Company (CIC)"
+                    },
+                    {
+                        "value": "social_enterprise",
+                        "label": "Social enterprise"
+                    },
+                    {
+                        "value": "nonprofit_co",
+                        "label": "Non-profit company (e.g., CLG)"
+                    },
+                    {
+                        "value": "individual",
+                        "label": "Individual (not eligible)"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_turnover",
+                "type": "choice",
+                "label": "Is your annual turnover £60,000 or more?",
+                "help": "Based on your latest audited/independently examined accounts, or an average over three years.",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No (not eligible for this fund)"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_accounts",
+                "type": "choice",
+                "label": "Do you have audited or independently examined accounts?",
+                "choices": [
+                    {
+                        "value": "yes",
+                        "label": "Yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "No (newly registered organisations are not eligible)"
+                    }
+                ],
+                "required": true
+            },
+            {
+                "id": "elig_amount_requested",
+                "type": "currency_gbp",
+                "label": "Grant amount requested",
+                "help": "Between £30,000 and £400,000 for 12 months to 4 years. Most grants are £150,000–£250,000.",
+                "required": true
+            },
+            {
+                "id": "elig_duration",
+                "type": "choice",
+                "label": "Proposed funding duration",
+                "choices": [
+                    {
+                        "value": "1year",
+                        "label": "12 months"
+                    },
+                    {
+                        "value": "2years",
+                        "label": "2 years"
+                    },
+                    {
+                        "value": "3years",
+                        "label": "3 years"
+                    },
+                    {
+                        "value": "4years",
+                        "label": "4 years"
+                    }
+                ],
+                "required": true
+            }
+        ],
+        "your_org": [
+            {
+                "id": "phf_mission",
+                "type": "text_long",
+                "label": "Tell us about your organisation's mission",
+                "help": "What is your organisation's purpose and how does art sit at the centre of your work?",
+                "coachingTip": "PHF doesn't fund 'arts organisations' — they fund organisations where creative practice drives social change. Lead with WHY your organisation exists, not WHAT you do. What injustice or inequality are you responding to?",
+                "required": true,
+                "outputSlots": [
+                    "org_mission"
+                ]
+            },
+            {
+                "id": "phf_art_social_change",
+                "type": "text_long",
+                "label": "How does creative practice intersect with social change in your work?",
+                "help": "PHF looks for organisations that use art to engage with the complexities of the world.",
+                "coachingTip": "Be specific. Don't say 'we use art to bring communities together'. Say 'In 2025, we worked with 15 young people from the Somali community in Bristol to create a podcast series exploring intergenerational trauma through storytelling and sound design.'",
+                "required": true,
+                "outputSlots": [
+                    "art_social_change"
+                ]
+            },
+            {
+                "id": "phf_lived_experience",
+                "type": "text_long",
+                "label": "How are the lived experiences of those affected by injustice centred in your governance, leadership, and programmes?",
+                "coachingTip": "PHF wants to see power sharing, not charity. Who sits on your board? Who makes artistic decisions? If the people your work serves aren't in leadership positions, explain how you're working towards that.",
+                "required": true,
+                "outputSlots": [
+                    "lived_experience"
+                ]
+            }
+        ],
+        "the_work": [
+            {
+                "id": "phf_what_will_you_do",
+                "type": "text_long",
+                "label": "Describe the work this funding will support",
+                "help": "What activities, programmes, or projects will you deliver? Who participates and how?",
+                "coachingTip": "Show, don't tell. Share a concrete example from your recent work, then explain how this funding will help you go deeper, wider, or longer. PHF values depth over novelty.",
+                "required": true,
+                "outputSlots": [
+                    "project_description"
+                ]
+            },
+            {
+                "id": "phf_participants",
+                "type": "text_long",
+                "label": "Who participates in your work and how are they involved?",
+                "help": "How do participants shape the work? What does meaningful engagement look like?",
+                "coachingTip": "PHF distinguishes between people who are 'done to' and people who 'do'. Show that your participants are co-creators, not audiences. How do they influence what gets made?",
+                "required": true,
+                "outputSlots": [
+                    "participants"
+                ]
+            },
+            {
+                "id": "phf_art_forms",
+                "type": "multi_choice",
+                "label": "What art forms does your work involve?",
+                "choices": [
+                    {
+                        "value": "crafts",
+                        "label": "Crafts"
+                    },
+                    {
+                        "value": "creative_writing",
+                        "label": "Creative writing / poetry"
+                    },
+                    {
+                        "value": "dance",
+                        "label": "Dance"
+                    },
+                    {
+                        "value": "design",
+                        "label": "Design"
+                    },
+                    {
+                        "value": "digital",
+                        "label": "Digital arts / media"
+                    },
+                    {
+                        "value": "film",
+                        "label": "Film"
+                    },
+                    {
+                        "value": "music",
+                        "label": "Music"
+                    },
+                    {
+                        "value": "photography",
+                        "label": "Photography"
+                    },
+                    {
+                        "value": "theatre",
+                        "label": "Theatre / drama"
+                    },
+                    {
+                        "value": "visual",
+                        "label": "Visual arts"
+                    },
+                    {
+                        "value": "cross",
+                        "label": "Cross-arts / interdisciplinary"
+                    }
+                ],
+                "outputSlots": [
+                    "art_forms"
+                ]
+            }
+        ],
+        "equity": [
+            {
+                "id": "phf_anti_racist",
+                "type": "text_long",
+                "label": "How is your organisation actively anti-racist and intersectional in its approach?",
+                "help": "PHF prioritises organisations with demonstrable commitment to anti-racist practice.",
+                "coachingTip": "This isn't about having an EDI policy on your website. It's about practice. What has actually changed in your organisation? Who has power? What decisions have been difficult? Honesty and self-reflection are valued over polished statements.",
+                "required": true,
+                "outputSlots": [
+                    "anti_racist"
+                ]
+            },
+            {
+                "id": "phf_underfunded",
+                "type": "text_long",
+                "label": "How does your work build capacity within historically underfunded communities?",
+                "coachingTip": "Name the communities. Name the underfunding. Be explicit about the structural barriers your work responds to. Vagueness is the enemy here.",
+                "outputSlots": [
+                    "underfunded_communities"
+                ]
+            },
+            {
+                "id": "phf_hierarchies",
+                "type": "text_long",
+                "label": "How does your creative practice challenge traditional cultural hierarchies?",
+                "help": "Hierarchies of genre, art form, who gets to create, and whose culture is valued.",
+                "outputSlots": [
+                    "cultural_hierarchies"
+                ]
+            }
+        ],
+        "learning": [
+            {
+                "id": "phf_ecosystem",
+                "type": "text_long",
+                "label": "How do you understand your role within a broader ecosystem of change?",
+                "help": "PHF wants to see systems thinking — you're part of a wider movement, not working in isolation.",
+                "coachingTip": "Name your peers and collaborators. Who else is doing similar work? How do you connect with, learn from, and strengthen each other? PHF funds networks, not islands.",
+                "required": true,
+                "outputSlots": [
+                    "ecosystem"
+                ]
+            },
+            {
+                "id": "phf_learning",
+                "type": "text_long",
+                "label": "How do you share learning from your work?",
+                "help": "Publications, events, peer networks, open-source resources, sector presentations.",
+                "coachingTip": "PHF values generosity with knowledge. If your learning stays inside your organisation, that's a red flag. Show how others benefit from what you've discovered.",
+                "outputSlots": [
+                    "learning"
+                ]
+            }
+        ],
+        "budget": [
+            {
+                "id": "phf_total_cost",
+                "type": "currency_gbp",
+                "label": "Total programme cost over the funding period",
+                "required": true,
+                "outputSlots": [
+                    "total_cost"
+                ]
+            },
+            {
+                "id": "phf_budget_breakdown",
+                "type": "text_long",
+                "label": "Budget breakdown",
+                "help": "Staff costs, artist fees, project delivery, overheads, evaluation, access costs. Show annual breakdown if multi-year.",
+                "coachingTip": "PHF understands that real change takes time and resources. Don't underfund your staff or pretend overheads don't exist. Full cost recovery is not only acceptable — it's expected.",
+                "required": true,
+                "outputSlots": [
+                    "budget_breakdown"
+                ]
+            },
+            {
+                "id": "phf_other_funding",
+                "type": "text_long",
+                "label": "Other funding sources",
+                "help": "List confirmed and pending income, earned revenue, in-kind support.",
+                "outputSlots": [
+                    "other_funding"
+                ]
+            }
+        ]
+    },
+    "outputSlots": [
+        {
+            "id": "org_mission",
+            "title": "Organisation Mission",
+            "type": "paragraph",
+            "requiredInputs": [
+                "org_mission"
+            ],
+            "template": [
+                "{org_mission}"
+            ]
+        },
+        {
+            "id": "art_social_change",
+            "title": "Art & Social Change",
+            "type": "paragraph",
+            "requiredInputs": [
+                "art_social_change"
+            ],
+            "template": [
+                "{art_social_change}"
+            ]
+        },
+        {
+            "id": "project_description",
+            "title": "The Work",
+            "type": "paragraph",
+            "requiredInputs": [
+                "project_description"
+            ],
+            "template": [
+                "{project_description}"
+            ]
+        },
+        {
+            "id": "anti_racist",
+            "title": "Anti-Racist Practice",
+            "type": "paragraph",
+            "requiredInputs": [
+                "anti_racist"
+            ],
+            "template": [
+                "{anti_racist}"
+            ]
+        },
+        {
+            "id": "ecosystem",
+            "title": "Ecosystem & Collaboration",
+            "type": "paragraph",
+            "requiredInputs": [
+                "ecosystem"
+            ],
+            "template": [
+                "{ecosystem}"
+            ]
+        },
+        {
+            "id": "budget_breakdown",
+            "title": "Budget",
+            "type": "paragraph",
+            "requiredInputs": [
+                "budget_breakdown"
+            ],
+            "template": [
+                "{budget_breakdown}"
+            ]
+        }
+    ]
+}
