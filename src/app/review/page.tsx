@@ -6,6 +6,7 @@ import { useApp } from "@/context/AppContext";
 import { Step, Question, OutputSlot, MissingItem } from "@/lib/schema";
 import { computeMissingInfo } from "@/lib/engine";
 import MissingInfoList from "@/components/MissingInfoList";
+import FiveFactsCheck from "@/components/FiveFactsCheck";
 
 export default function ReviewPage() {
     const router = useRouter();
@@ -50,6 +51,8 @@ export default function ReviewPage() {
                 onGoToQuestion={(stepId, qId) => router.push(`/wizard/${currentRoute!.id}?step=${stepId}`)}
                 onGoToOutput={(slotId) => router.push("/outputs")}
             />
+
+            <FiveFactsCheck answers={answers} />
 
             {hasMissing && (
                 <div className="p-6 bg-amber-50 border-2 border-amber-100 rounded-[2rem] flex flex-col sm:flex-row items-center justify-between gap-6">

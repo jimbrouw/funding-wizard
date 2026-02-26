@@ -1,6 +1,12 @@
 "use client";
 
-import { RouteContent, Question, UserAnswers } from "@/lib/types";
+import { Question, Answers } from "@/lib/schema";
+
+type RouteContent = {
+    questions: Record<string, Question[]>;
+};
+
+type UserAnswers = Answers;
 
 interface Props {
     content: RouteContent;

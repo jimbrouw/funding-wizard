@@ -46,6 +46,25 @@ export default function AppShell({
                             >
                                 Routes
                             </Link>
+                            <div className="w-px h-5 bg-slate-200 mx-1" />
+                            <Link
+                                href="/storytelling"
+                                className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                            >
+                                Story Builder
+                            </Link>
+                            <Link
+                                href="/research"
+                                className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                            >
+                                Research
+                            </Link>
+                            <Link
+                                href="/alerts"
+                                className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                            >
+                                Alerts
+                            </Link>
                         </nav>
                     </div>
 

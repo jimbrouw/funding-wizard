@@ -16,7 +16,19 @@ export default function QuestionRenderer({
     onChange,
     error,
 }: QuestionRendererProps) {
-    const { id, type, label, help, required } = question;
+    const { id, type, label, help, required, coachingTip } = question;
+
+    const renderCoachingTip = () =>
+        coachingTip ? (
+            <div className="mb-4 flex items-start gap-3 p-4 bg-amber-50/60 border border-amber-100 rounded-2xl">
+                <span className="shrink-0 mt-0.5 text-amber-500">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a6 6 0 00-2 11.66V16a2 2 0 002 2h0a2 2 0 002-2v-2.34A6 6 0 0010 2zm0 2a4 4 0 011.54 7.69.75.75 0 00-.54.72V14H9v-1.59a.75.75 0 00-.54-.72A4 4 0 0110 4z" />
+                    </svg>
+                </span>
+                <p className="text-sm text-amber-800 font-medium italic leading-relaxed">{coachingTip}</p>
+            </div>
+        ) : null;
 
     const renderLabel = () => (
         <div className="space-y-1 mb-6">
@@ -40,8 +52,8 @@ export default function QuestionRenderer({
     );
 
     const inputBaseClasses = `w-full px-6 py-4 rounded-2xl border-2 transition-all outline-none text-slate-900 font-bold placeholder:text-slate-300 ${error
-            ? "border-red-100 bg-red-50 focus:border-red-500"
-            : "border-slate-100 bg-white focus:border-slate-900 focus:shadow-xl focus:shadow-slate-100"
+        ? "border-red-100 bg-red-50 focus:border-red-500"
+        : "border-slate-100 bg-white focus:border-slate-900 focus:shadow-xl focus:shadow-slate-100"
         }`;
 
     switch (type) {
@@ -56,16 +68,16 @@ export default function QuestionRenderer({
                     <div className="grid grid-cols-1 gap-3">
                         {choices.map((opt) => {
                             const isSelected = isMulti
-                                ? Array.isArray(value) && value.includes(opt.value)
+                                ? Array.isArray(value) && (value as string[]).includes(opt.value)
                                 : value === opt.value;
 
                             const handleClick = () => {
                                 if (isMulti) {
-                                    const current = Array.isArray(value) ? value : [];
+                                    const current = Array.isArray(value) ? (value as string[]) : [];
                                     if (isSelected) {
-                                        onChange(current.filter(v => v !== opt.value));
+                                        onChange(current.filter(v => v !== opt.value) as string[]);
                                     } else {
-                                        onChange([...current, opt.value]);
+                                        onChange([...current, opt.value] as string[]);
                                     }
                                 } else {
                                     onChange(opt.value);
@@ -78,8 +90,8 @@ export default function QuestionRenderer({
                                     type="button"
                                     onClick={handleClick}
                                     className={`p-5 text-left rounded-2xl border-2 transition-all flex items-center justify-between group/btn ${isSelected
-                                            ? "border-slate-900 bg-slate-900 text-white shadow-xl scale-[1.01]"
-                                            : "border-slate-100 bg-white hover:border-slate-200 hover:bg-slate-50 text-slate-600"
+                                        ? "border-slate-900 bg-slate-900 text-white shadow-xl scale-[1.01]"
+                                        : "border-slate-100 bg-white hover:border-slate-200 hover:bg-slate-50 text-slate-600"
                                         }`}
                                 >
                                     <span className="font-bold">{opt.label}</span>
@@ -106,6 +118,7 @@ export default function QuestionRenderer({
             return (
                 <div>
                     {renderLabel()}
+                    {renderCoachingTip()}
                     <input
                         id={id}
                         type="text"
@@ -123,6 +136,7 @@ export default function QuestionRenderer({
             return (
                 <div>
                     {renderLabel()}
+                    {renderCoachingTip()}
                     <textarea
                         id={id}
                         rows={5}
@@ -211,7 +225,7 @@ export default function QuestionRenderer({
                                                         onChange={(e) => {
                                                             const newRows = [...rows];
                                                             newRows[rowIndex] = { ...row, [col.key]: e.target.value };
-                                                            onChange(newRows);
+                                                            onChange(newRows as Record<string, any>[]);
                                                         }}
                                                         className="w-full px-4 py-3 rounded-xl border border-transparent focus:border-slate-200 focus:bg-white bg-slate-50/50 outline-none font-bold text-slate-800 transition-all text-sm placeholder:text-slate-300"
                                                         placeholder={col.label}
@@ -221,7 +235,7 @@ export default function QuestionRenderer({
                                             <td className="px-6 py-3">
                                                 <button
                                                     type="button"
-                                                    onClick={() => onChange(rows.filter((_, i) => i !== rowIndex))}
+                                                    onClick={() => onChange(rows.filter((_, i) => i !== rowIndex) as Record<string, any>[])}
                                                     className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-300 hover:text-red-500 hover:bg-red-50 transition-all opacity-0 group-row:opacity-100"
                                                 >
                                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

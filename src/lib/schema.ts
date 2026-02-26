@@ -19,6 +19,7 @@ export type QuestionBase = {
   type: string;
   label: string;
   help?: string;
+  coachingTip?: string;
   required?: boolean;
   tags?: string[];
   outputSlots?: string[];

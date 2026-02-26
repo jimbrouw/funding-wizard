@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { useApp } from "@/context/AppContext";
 import ProfileForm from "@/components/ProfileForm";
+import GrantResearchGuide from "@/components/GrantResearchGuide";
 
 export default function StartPage() {
   const router = useRouter();
@@ -27,6 +28,8 @@ export default function StartPage() {
           Answer a few quick questions. This version supports Arts Council England routes only.
         </p>
       </header>
+
+      <GrantResearchGuide />
 
       <ProfileForm
         value={profile}

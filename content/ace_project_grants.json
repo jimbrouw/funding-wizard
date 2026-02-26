@@ -61,6 +61,7 @@
                 "type": "text_short",
                 "label": "What is the project in one sentence?",
                 "required": true,
+                "coachingTip": "Lead with the change your project creates, not what you do. What's the one-line story?",
                 "outputSlots": [
                     "project_summary_300"
                 ]
@@ -112,6 +113,7 @@
                 "type": "text_long",
                 "label": "Activities list (3-6 bullets)",
                 "required": true,
+                "coachingTip": "Show, don't tell. Instead of 'I will run workshops', try 'In June, 12 young people from [area] will spend three days building…'",
                 "outputSlots": [
                     "project_description_800"
                 ]
@@ -184,6 +186,7 @@
                 "label": "How have you worked out these figures?",
                 "help": "e.g., venue capacity x performances",
                 "required": true,
+                "coachingTip": "Don't inflate numbers. Conservative estimates backed by real maths are stronger than big guesses. Show your working.",
                 "outputSlots": [
                     "beneficiary_calc_800"
                 ]
@@ -490,6 +493,7 @@
                 "id": "budget_experience_support_1500",
                 "type": "text_long",
                 "label": "What support will you have to manage the budget?",
+                "coachingTip": "Transferable proof: have you managed any budget — a school event, a freelance project, household finances for a renovation? Those skills transfer. Describe the specific situation.",
                 "condition": {
                     "questionId": "budget_experience_choice",
                     "equals": "no"
@@ -561,6 +565,7 @@
                 "id": "pm_experience_support_1500",
                 "type": "text_long",
                 "label": "What support will you have to manage the project?",
+                "coachingTip": "Think transferable proof: coordinating a team, organising an event, adapting to last-minute changes. Find the traits this project needs, then show where you've demonstrated them before.",
                 "condition": {
                     "questionId": "pm_experience_choice",
                     "equals": "no"
@@ -630,6 +635,7 @@
                 "label": "Describe main risks/challenges and how you'll manage them",
                 "help": "Use the table above to help draft this.",
                 "required": true,
+                "coachingTip": "Funders want architecture, not anxiety. Name each risk, then show your plan. A specific story of how you handled a past setback is more convincing than a generic mitigation.",
                 "outputSlots": [
                     "risks_1500"
                 ]
@@ -702,6 +708,7 @@
                 "type": "text_long",
                 "label": "How your project addresses the creative case for diversity",
                 "required": true,
+                "coachingTip": "Use a specific story — a moment where diversity changed your work or your audience's experience. Show the impact through a real situation, not a statement of values.",
                 "outputSlots": [
                     "creative_case_1500"
                 ]
