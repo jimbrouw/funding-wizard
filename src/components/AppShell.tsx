@@ -46,6 +46,12 @@ export default function AppShell({
                             >
                                 Routes
                             </Link>
+                            <Link
+                                href="/grant-engine"
+                                className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                            >
+                                Grant Engine
+                            </Link>
                             <div className="w-px h-5 bg-slate-200 mx-1" />
                             <Link
                                 href="/storytelling"

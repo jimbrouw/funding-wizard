@@ -1,4 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a Next.js funding tool. The current MVP includes the original Funding Wizard flow and a new internal Grant Engine vertical slice at `/grant-engine`.
+
+## Grant Engine MVP
+
+Grant Engine is an anti-slop project-development workflow for UK artists, CICs, and creative technologists. It does not draft immediately. It links a project to a grant, interrogates the missing evidence, then only drafts once every required gap is answered or marked not applicable.
+
+Implemented MVP pieces:
+
+- Supabase migration in `supabase/migrations/20260606120000_grant_engine_mvp.sql`
+- `project_grants` join model for project-against-specific-grant work
+- Fixed status values and a database trigger blocking `ready_to_draft` while required questions are unresolved
+- Seeded local vertical slice through `/api/grant-engine`
+- Draft guardrails for banned slop terms, vague claims, and unsupported entities/figures
+- Fetcher payload contract through the `fetcher` API action
+
+The API currently runs in seeded-memory mode when Supabase credentials are not configured. The migration is the database contract for Supabase deployment.
+
+Server-side environment variables:
+
+```bash
+SUPABASE_URL=
+SUPABASE_SERVICE_ROLE_KEY=
+ANTHROPIC_API_KEY=
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+GRANT_ENGINE_WEBHOOK_SECRET=
+```
+
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` switch the Grant Engine API from seeded-memory mode to Supabase mode. `ANTHROPIC_API_KEY` enables optional Claude drafting after the deterministic interrogation gate clears. `GRANT_ENGINE_WEBHOOK_SECRET` protects `POST /api/grant-engine/fetcher` when set.
 
 ## Getting Started
 
