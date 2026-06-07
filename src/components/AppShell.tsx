@@ -26,7 +26,7 @@ export default function AppShell({
                     <div className="flex items-center gap-8">
                         <Link href="/" className="flex flex-col">
                             <span className="text-xl font-black tracking-tight text-slate-900">
-                                Funding Wizard
+                                Vibe Cheque
                             </span>
                             <span className="text-[10px] uppercase tracking-widest font-bold text-slate-400">
                                 v0.1 · Beta
@@ -50,7 +50,7 @@ export default function AppShell({
                                 href="/grant-engine"
                                 className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
                             >
-                                Grant Engine
+                                Project Check
                             </Link>
                             <div className="w-px h-5 bg-slate-200 mx-1" />
                             <Link
@@ -117,9 +117,9 @@ export default function AppShell({
             <footer className="bg-white border-t border-slate-200 py-12">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="flex flex-col gap-1 text-center md:text-left">
-                        <span className="text-sm font-bold text-slate-900">Funding Wizard</span>
+                        <span className="text-sm font-bold text-slate-900">Vibe Cheque</span>
                         <p className="text-xs text-slate-500 max-w-xs leading-relaxed">
-                            Turn rough notes into Grantium-ready answers.
+                            Check the project before you write the application.
                             Not official guidance. You are responsible for what you submit.
                         </p>
                     </div>

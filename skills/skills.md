@@ -1,5 +1,5 @@
 ```md
-# skills.md — Funding Wizard v0.1 (Master Build Spec)
+# skills.md — Vibe Cheque v0.1 (Master Build Spec)
 
 ## Purpose
 Build a **data-driven web app** that:

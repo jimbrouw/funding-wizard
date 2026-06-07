@@ -12,7 +12,7 @@ function PlaceholderContent() {
     const routeParam = searchParams.get("route") || "unknown";
 
     const handleExport = () => {
-        downloadJson("funding_wizard_answers_partial.json", { profile, answers });
+        downloadJson("vibe_cheque_answers_partial.json", { profile, answers });
     };
 
     return (

@@ -1,8 +1,8 @@
-# WIREFRAME_COPY.md — Funding Wizard v0.1 (microcopy pack)
+# WIREFRAME_COPY.md — Vibe Cheque v0.1 (microcopy pack)
 
 ## Global
 ### Header
-- App name: **Funding Wizard**
+- App name: **Vibe Cheque**
 - Buttons:
   - **Export JSON**
   - **Copy outputs**

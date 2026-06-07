@@ -13,7 +13,7 @@ export default function Header() {
         const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(answers, null, 2));
         const downloadAnchorNode = document.createElement('a');
         downloadAnchorNode.setAttribute("href", dataStr);
-        downloadAnchorNode.setAttribute("download", "funding_wizard_answers.json");
+        downloadAnchorNode.setAttribute("download", "vibe_cheque_answers.json");
         document.body.appendChild(downloadAnchorNode);
         downloadAnchorNode.click();
         downloadAnchorNode.remove();
@@ -28,7 +28,7 @@ export default function Header() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
                         </svg>
                     </div>
-                    <span className="font-bold text-foreground tracking-tight text-lg">Funding Wizard</span>
+                    <span className="font-bold text-foreground tracking-tight text-lg">Vibe Cheque</span>
                 </Link>
 
                 <div className="flex items-center gap-3">

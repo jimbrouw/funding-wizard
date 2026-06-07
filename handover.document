@@ -1,8 +1,8 @@
-# Grant Engine MVP Handover
+# Vibe Cheque MVP Handover
 
 ## Summary
 
-The existing `funding_wizard` Next.js app now includes a Grant Engine MVP vertical slice at `/grant-engine`.
+The existing Next.js app now includes the Vibe Cheque MVP project-checking workflow at `/grant-engine`.
 
 The slice proves the core product loop:
 
@@ -27,7 +27,7 @@ The Supabase migration is included as the database contract for deployment.
   - Adds a trigger blocking `projects.status = 'ready_to_draft'` while selected-pairing questions are unresolved.
 
 - `src/lib/grant-engine/`
-  - `types.ts`: shared Grant Engine types.
+  - `types.ts`: shared Vibe Cheque types.
   - `seed.ts`: seeded project, grant, master data, and selected pairing.
   - `engine.ts`: stable interrogation, draft gate, fetcher validation, draft generation.
   - `guardrails.ts`: banned-term, vague-claim, and unsupported-claim checks.
@@ -99,7 +99,7 @@ Manual HTTP smoke test passed:
 - Supabase runtime wiring exists, but the migration has not been applied to a real Supabase project in this session because no project credentials/project target were provided.
 - Claude runtime wiring exists, but it is only used when `ANTHROPIC_API_KEY` is configured. Drafting remains deterministic when that key is absent.
 - The unsupported-claim guard is a simple entity/figure check. It should later be replaced or supplemented with a stronger structured extraction step.
-- Full `npm run lint` fails on pre-existing unrelated lint debt in the old Funding Wizard files.
+- Full `npm run lint` fails on pre-existing unrelated lint debt in the old Vibe Cheque files.
 - Next build warns that it inferred `/Users/standard/package-lock.json` as workspace root because multiple lockfiles exist.
 
 ## Next Recommended Work

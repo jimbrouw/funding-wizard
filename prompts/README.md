@@ -1,4 +1,4 @@
-# Prompt Pack — Funding Wizard v0.1
+# Prompt Pack — Vibe Cheque v0.1
 
 This folder contains **task-scoped prompts** for Antigravity + Gemini Pro 3.
 

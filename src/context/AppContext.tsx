@@ -28,7 +28,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const [answers, setAnswers] = useState<Answers>(() => {
         // Try to load from localStorage if available
         if (typeof window !== "undefined") {
-            const saved = localStorage.getItem("funding_wizard_answers");
+            const saved = localStorage.getItem("vibe_cheque_answers");
             return saved ? JSON.parse(saved) : {};
         }
         return {};
@@ -36,16 +36,16 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const [currentRoute, setCurrentRoute] = useState<Route | null>(null);
 
     useEffect(() => {
-        localStorage.setItem("funding_wizard_answers", JSON.stringify(answers));
+        localStorage.setItem("vibe_cheque_answers", JSON.stringify(answers));
     }, [answers]);
 
     useEffect(() => {
-        localStorage.setItem("funding_wizard_profile", JSON.stringify(profile));
+        localStorage.setItem("vibe_cheque_profile", JSON.stringify(profile));
     }, [profile]);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            const savedProfile = localStorage.getItem("funding_wizard_profile");
+            const savedProfile = localStorage.getItem("vibe_cheque_profile");
             if (savedProfile) setProfile(JSON.parse(savedProfile));
         }
     }, []);
@@ -57,8 +57,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const clearAnswers = () => {
         setAnswers({});
         setProfile(DEFAULT_PROFILE);
-        localStorage.removeItem("funding_wizard_answers");
-        localStorage.removeItem("funding_wizard_profile");
+        localStorage.removeItem("vibe_cheque_answers");
+        localStorage.removeItem("vibe_cheque_profile");
     };
 
     return (
