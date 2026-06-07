@@ -87,7 +87,7 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ error: "Unknown action." }, { status: 400 });
     } catch (error) {
-        const message = error instanceof Error ? error.message : "Grant Engine request failed.";
+        const message = error instanceof Error ? error.message : "Vibe Cheque request failed.";
         return NextResponse.json({ error: message }, { status: 500 });
     }
 }

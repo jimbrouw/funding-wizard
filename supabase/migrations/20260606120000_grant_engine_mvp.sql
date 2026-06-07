@@ -1,4 +1,4 @@
--- Grant Engine MVP schema.
+-- Vibe Cheque MVP schema.
 -- Internal MVP: no auth/RLS policy is enabled here. API routes should use the
 -- Supabase service role key server-side only.
 

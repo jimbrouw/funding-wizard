@@ -1,4 +1,4 @@
-# COMPONENT_PROPS.md — Funding Wizard v0.1 (contracts)
+# COMPONENT_PROPS.md — Vibe Cheque v0.1 (contracts)
 
 ## Principles
 - Components are dumb. Data + rules live in `/content` and `src/lib`.

@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Funding Wizard",
+  title: "Vibe Cheque",
   description: "Turn rough notes into Grantium-ready answers.",
 };
 

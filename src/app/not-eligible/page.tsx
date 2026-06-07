@@ -10,7 +10,7 @@ export default function NotEligiblePage() {
     const { answers, profile } = useApp();
 
     const handleExport = () => {
-        downloadJson("funding_wizard_answers.json", { profile, answers });
+        downloadJson("vibe_cheque_answers.json", { profile, answers });
     };
 
     return (

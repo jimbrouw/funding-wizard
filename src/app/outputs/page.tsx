@@ -47,7 +47,7 @@ export default function OutputsPage() {
     };
 
     const handleExportAnswers = () => {
-        downloadJson("funding_wizard_answers.json", { profile, answers });
+        downloadJson("vibe_cheque_answers.json", { profile, answers });
     };
 
     const handleExportOutputs = () => {
@@ -55,7 +55,7 @@ export default function OutputsPage() {
             ...slot,
             computed: computeOutput(slot, answers)
         }));
-        downloadJson("funding_wizard_outputs.json", outputs);
+        downloadJson("vibe_cheque_outputs.json", outputs);
     };
 
     return (

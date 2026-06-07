@@ -1,8 +1,8 @@
-This is a Next.js funding tool. The current MVP includes the original Funding Wizard flow and a new internal Grant Engine vertical slice at `/grant-engine`.
+This is the Vibe Cheque Next.js funding tool. The current MVP includes the original guided application flow and the project-checking workflow at `/grant-engine`.
 
-## Grant Engine MVP
+## Vibe Cheque MVP
 
-Grant Engine is an anti-slop project-development workflow for UK artists, CICs, and creative technologists. It does not draft immediately. It links a project to a grant, interrogates the missing evidence, then only drafts once every required gap is answered or marked not applicable.
+Vibe Cheque is an anti-slop project-development workflow for UK artists, CICs, and creative technologists. It does not draft immediately. It links a project to a grant, interrogates the missing evidence, then only drafts once every required gap is answered or marked not applicable.
 
 Implemented MVP pieces:
 
@@ -25,7 +25,7 @@ ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
 GRANT_ENGINE_WEBHOOK_SECRET=
 ```
 
-`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` switch the Grant Engine API from seeded-memory mode to Supabase mode. `ANTHROPIC_API_KEY` enables optional Claude drafting after the deterministic interrogation gate clears. `GRANT_ENGINE_WEBHOOK_SECRET` protects `POST /api/grant-engine/fetcher` when set.
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` switch the Vibe Cheque API from seeded-memory mode to Supabase mode. `ANTHROPIC_API_KEY` enables optional Claude drafting after the deterministic interrogation gate clears. `GRANT_ENGINE_WEBHOOK_SECRET` protects `POST /api/grant-engine/fetcher` when set.
 
 ## Getting Started
 
