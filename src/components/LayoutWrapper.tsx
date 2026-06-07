@@ -4,12 +4,14 @@ import React from "react";
 import AppShell from "./AppShell";
 import { useApp } from "@/context/AppContext";
 import { downloadJson, copyToClipboard } from "@/lib/engine";
+import { usePathname } from "next/navigation";
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
     const { answers, profile } = useApp();
+    const pathname = usePathname();
 
     const handleExportAnswers = () => {
-        downloadJson("funding_wizard_answers.json", { profile, answers });
+        downloadJson("vibe_cheque_answers.json", { profile, answers });
     };
 
     const handleCopyOutputs = () => {
@@ -21,6 +23,10 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     const hasAnswers = Object.keys(answers).length > 0;
     // Let's assume there are outputs if there is a route selected and some answers
     const hasOutputs = hasAnswers;
+
+    if (pathname === "/grant-engine") {
+        return <>{children}</>;
+    }
 
     return (
         <AppShell
